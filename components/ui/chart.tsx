@@ -223,6 +223,8 @@ const ChartTooltipContent = React.forwardRef<
                               "--color-border": indicatorColor,
                             } as React.CSSProperties
                           }
+                          role="presentation"
+                          aria-hidden="true"
                         />
                       )
                     )}
@@ -304,6 +306,8 @@ const ChartLegendContent = React.forwardRef<
                   style={{
                     backgroundColor: item.color,
                   }}
+                  role="presentation"
+                  aria-hidden="true"
                 />
               )}
               {itemConfig?.label}

@@ -1,0 +1,44 @@
+W03 Group Project Submission
+Course: WDD 430: Web Full-Stack Development
+Project: Handcrafted Haven
+Student: Ian Kazembe
+
+1. Project Repository
+GitHub Repo URL:
+https://github.com/iankaz/wdd430-project-main
+
+2. Project Board
+GitHub Project Board URL:
+https://github.com/users/iankaz/projects/1/views/1
+- The board contains at least 10 items, including user stories, tasks, and features.
+
+3. Meeting Summary
+Date & Time:
+July 17, 2025, 7:00 PM (GMT)
+
+Participant:
+- Ian Kazembe
+
+Summary:
+- Challenge:
+  Working alone, the biggest challenge was managing all aspects of the project, from setup to planning and implementation, without the benefit of group brainstorming or task sharing.
+- Success:
+  I successfully set up the Next.js project, pushed it to GitHub, haven’t deployed it to Vercel yet, and created the initial navigation and placeholder pages. The project board was organized with user stories and tasks to keep me on track.
+- Insight:
+  I learned the importance of self-organization and using tools like the GitHub Project Board to break down the project into manageable steps. This helped me maintain focus and make steady progress.
+
+Decisions Made:
+- Use Next.js with TypeScript and ESLint.
+- Add Tailwind CSS later if needed.
+- Organize tasks and user stories on the GitHub Project Board.
+- Set personal deadlines for each feature.
+
+Next Steps / Assignments:
+- Continue building out the main features (seller profiles, product listings, reviews, authentication).
+- Review accessibility and SEO requirements.
+- Update the board with progress after each work session.
+
+Rubric Checklist
+- Project Repo Provided
+- Project Board Provided (10+ items)
+- Meeting Summary (challenge, success, insight, participant) 

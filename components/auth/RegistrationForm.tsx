@@ -9,7 +9,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 import { UserPlus, Mail, Lock, User } from "lucide-react"
 
 interface RegistrationFormProps {
-  onSubmit: (data: { email: string; password: string; confirmPassword: string }) => void
+  onSubmit: (data: { email: string; password: string; confirmPassword: string; name: string }) => void
   loading?: boolean
   error?: string | null
 }
@@ -18,10 +18,14 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSubmit, loading, 
   const [email, setEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("")
   const [confirmPassword, setConfirmPassword] = useState<string>("")
+  const [name, setName] = useState<string>("")
   const [validationErrors, setValidationErrors] = useState<string[]>([])
 
   const validate = (): boolean => {
     const errors: string[] = []
+    if (!name.trim()) {
+      errors.push("Name is required")
+    }
     if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
       errors.push("Invalid email format")
     }
@@ -38,7 +42,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSubmit, loading, 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
     if (validate()) {
-      onSubmit({ email, password, confirmPassword })
+      onSubmit({ email, password, confirmPassword, name })
     }
   }
 
@@ -68,6 +72,22 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSubmit, loading, 
               </AlertDescription>
             </Alert>
           )}
+          
+          <div className="space-y-2">
+            <Label htmlFor="name">Full Name</Label>
+            <div className="relative">
+              <User className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+              <Input
+                id="name"
+                type="text"
+                placeholder="Enter your full name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="pl-10"
+                required
+              />
+            </div>
+          </div>
           
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
@@ -120,7 +140,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSubmit, loading, 
           <Button
             type="submit"
             disabled={loading}
-            className="w-full bg-teal-600 hover:bg-teal-700"
+            className="w-full bg-[#005151] hover:bg-[#003D3D] text-white"
           >
             {loading ? (
               <>

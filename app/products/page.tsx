@@ -162,8 +162,8 @@ export default function ProductsPage() {
               <p className="text-sm text-muted-foreground mb-3">by {product.artisan}</p>
               
               <div className="flex items-center justify-between">
-                <span className="text-xl font-bold text-teal-600">${product.price}</span>
-                <Button size="sm" className="bg-teal-600 hover:bg-teal-700">
+                <span className="text-xl font-bold text-[#005151]">${product.price}</span>
+                <Button size="sm" className="bg-[#005151] hover:bg-[#003D3D]">
                   <ShoppingCart className="mr-1 h-3 w-3" />
                   Add to Cart
                 </Button>

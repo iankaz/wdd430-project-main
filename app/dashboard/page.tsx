@@ -13,7 +13,7 @@ export default function DashboardPage() {
           <h1 className="text-3xl font-bold text-gray-900">Artisan Dashboard</h1>
           <p className="text-gray-600">Welcome back! Here's what's happening with your crafts.</p>
         </div>
-        <Button className="bg-teal-600 hover:bg-teal-700">
+        <Button className="bg-[#005151] hover:bg-[#003D3D]">
           <Plus className="mr-2 h-4 w-4" />
           Add New Product
         </Button>

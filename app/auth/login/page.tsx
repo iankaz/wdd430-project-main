@@ -13,26 +13,52 @@ export default function LoginPage() {
     setLoading(true)
     setError(null)
     try {
-      // TODO: Call backend API to login user
-      // Simulate API call delay
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-      alert("Login successful for " + data.email)
+      const response = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ 
+          email: data.email, 
+          password: data.password 
+        }),
+      })
+      
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.error || "Login failed")
+      }
+      
+      const result = await response.json()
+      
+      // Store token in localStorage (in production, use secure httpOnly cookies)
+      if (data.rememberMe) {
+        localStorage.setItem("authToken", result.token)
+        localStorage.setItem("user", JSON.stringify(result.user))
+      } else {
+        sessionStorage.setItem("authToken", result.token)
+        sessionStorage.setItem("user", JSON.stringify(result.user))
+      }
+      
+      alert("Login successful for " + result.user.name)
+      // TODO: Redirect to dashboard or previous page
+      
     } catch (err) {
-      setError("Login failed. Please try again.")
+      setError(err instanceof Error ? err.message : "Login failed. Please try again.")
     } finally {
       setLoading(false)
     }
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-beige-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#EEE5DD] to-[#9F8B7A] flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         <LoginForm onSubmit={handleLogin} loading={loading} error={error} />
         <div className="mt-6 text-center">
           <p className="text-sm text-muted-foreground">
             Don't have an account?{" "}
             <Link href="/auth/register">
-              <Button variant="link" className="p-0 text-teal-600 hover:text-teal-700">
+              <Button variant="link" className="p-0 text-[#005151] hover:text-[#003D3D]">
                 Create one here
               </Button>
             </Link>

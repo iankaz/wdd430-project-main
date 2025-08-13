@@ -25,23 +25,29 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="container flex h-16 items-center justify-between">
               <div className="flex items-center space-x-4">
                 <Link href="/" className="flex items-center space-x-2">
-                  <ShoppingBag className="h-8 w-8 text-teal-600" />
-                  <span className="text-xl font-bold text-teal-600">ArtisanCraft Hub</span>
+                  <ShoppingBag className="h-8 w-8 text-[#005151]" />
+                  <span className="text-xl font-bold text-[#005151]">ArtisanCraft Hub</span>
                 </Link>
               </div>
               
               <nav className="hidden md:flex items-center space-x-6">
-                <Link href="/products" className="text-sm font-medium transition-colors hover:text-teal-600">
+                <Link href="/products" className="text-sm font-medium transition-colors hover:text-[#005151]">
                   Products
                 </Link>
-                <Link href="/sellers" className="text-sm font-medium transition-colors hover:text-teal-600">
+                <Link href="/sellers" className="text-sm font-medium transition-colors hover:text-[#005151]">
                   Sellers
                 </Link>
-                <Link href="/reviews" className="text-sm font-medium transition-colors hover:text-teal-600">
+                <Link href="/reviews" className="text-sm font-medium transition-colors hover:text-[#005151]">
                   Reviews
                 </Link>
-                <Link href="/dashboard" className="text-sm font-medium transition-colors hover:text-teal-600">
+                <Link href="/dashboard" className="text-sm font-medium transition-colors hover:text-[#005151]">
                   Dashboard
+                </Link>
+                <Link href="/profile" className="text-sm font-medium transition-colors hover:text-[#005151]">
+                  Profile
+                </Link>
+                <Link href="/seller-dashboard" className="text-sm font-medium transition-colors hover:text-[#005151]">
+                  Seller Dashboard
                 </Link>
               </nav>
 
@@ -53,7 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   </Button>
                 </Link>
                 <Link href="/auth/register">
-                  <Button size="sm" className="bg-teal-600 hover:bg-teal-700">
+                  <Button size="sm" className="bg-[#005151] hover:bg-[#003D3D]">
                     <UserPlus className="mr-2 h-4 w-4" />
                     Register
                   </Button>
